@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<style media="screen">
+  /*Body*/
+
+  body {
+    margin: 0;
+  }
+
+  /*Header*/
+  header {}
+
+  #header-img {
+    width: 100px;
+
+  }
+
+
+  /* The navigation bar*/
+
+
+
+  .nav-link {
+    overflow: hidden;
+    background-color: #333 position: fixed;
+    top: 0;
+    width: 100%
+  }
+
+  /*Links inside the navbar*/
+  .nav-link>ul {
+    float: right;
+    display: flex;
+    flex-direction: row;
+    color: #830393 text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+
+  /*Background over mouse hover*/
+  .nav-link a:hover {
+    background: #ddd;
+    color: black;
+  }
+
+  /* Main content*/
+  .main {
+    padding: 16px;
+    margin-top: 30px;
+    /* Top margin to avoid content overlay*/
+  }
+</style>
+
+
+<body>
+  <header id="header">
+    <img id="header-img" src="https://cdn.dribbble.com/users/1787323/screenshots/12057610/media/8e7e8e869bf389fb727ac393c42e6b27.png?compress=1&resize=400x300" alt="Xtreme Control logo ">
+    <nav id="nav-bar">
+      <ul>
+        <li><a class="nav-link" href="#features">Features</a></li>
+        <li><a class="nav-link" href="#how-it-works">How it Works</a></li>
+        <li><a class="nav-link" href="#pricing">Prici</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="how-it-works">
+    <iframe id="video" src="https://www.youtube.com/embed/SebzB8W3bVU" frameborder="0" allowfullscreen>
+    </iframe>
+  </section>
+
+  <section id="features">
+    <h1>Play better. Play faster.</h1>
+    <form action="https://www.freecodecamp.com/email-submit" id="form"><label for="email"></label>
+      <input type="email" name="email" placeholder="Enter youre email address" id="email" required>
+      <input type="submit" value="Get started" id="submit">
+    </form>
+  </section>
+
+
+
+  <section id="pricing">
+    <div class="product" id="Infinity">
+      <div class="range">Infinity</div>
+      <h2>$149.99</h2>
+      <ol>
+        <li>Two remappable paddles</li>
+        <li>Trigger stops and hair triggers</li>
+        <li>Hand Crafted Texturized grip</li>
+      </ol>
+      <button class="buttn">Select</button>
+    </div>
+    <div class="product" id="infinityPro">
+      <div class="range">InfinityPro</div>
+      <h2>$179.99</h2>
+      <ol>
+        <li>Two remappable paddles</li>
+        <li>Trigger Control System</li>
+        <li>Military Grade Grips</li>
+        <li>Digital Tap Bumpers</li>
+      </ol>
+      <button class="buttn">Select</button>
+    </div>
+    <div class="product" id="instinct">
+      <div class="range">Ultra Instinct</div>
+      <h2>$259.99</h2>
+      <ol>
+        <li>Four remappable paddles</li>
+        <li>Trigger control System</li>
+        <li>Digital Tap Bumpers</li>
+        <li>Control Disc</li>
+        <li>Military grade grips</li>
+        <li>Electro-Magneic-Remapping</li>
+      </ol>
+      <button class="buttn">Select</button>
+    </div>
+  </section>
+
+</body>
+<script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+
+</html>
