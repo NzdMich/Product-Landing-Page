@@ -12,6 +12,8 @@ header {
 
 }
 
+
+
 #header-img {
   width: 100px;
 
@@ -21,20 +23,19 @@ header {
 /* The navigation bar*/
 
 
-
-.nav-link {
+/*.nav-link {*
   padding: 20px;
   margin: 20px;
   overflow: hidden;
   background-color: #333
   position: fixed;
-  top: 0;
-  left: 0;
+  top: 0px;
+  left: 0px;
   width: 100%
 }
 
 /*Links inside the navbar*/
-.nav-link > ul {
+/*.nav-link < ul {*
   float: right;
   display: flex;
   flex-direction: column;
@@ -47,7 +48,7 @@ header {
 }
 
 /*Background over mouse hover*/
-.nav-link ul:hover {
+/*.nav-link ul:hover {
   background: #ddd;
   color: black;
 }

@@ -2,126 +2,529 @@
 <html>
 
 <head>
+  <link rel="stylesheet" type="text/css" href="css/master.css">
+
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
+
 <style media="screen">
-  /*Body*/
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 
   body {
-    margin: 0;
+    font-family: 'nunito';
+    color: white;
+    background-color: lightblue;
+    line-height: 1.4;
+    width: 100%;
+    font-size: 1vw;
   }
 
-  /*Header*/
-  header {}
+  #background {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    z-index: -1;
+    /* Ensure div tag stays behind content; -999 might work, too. */
+  }
 
-  #header-img {
-    width: 100px;
+  .stretch {
+    width: 100%;
+    height: 100%;
+  }
 
+  /*h1 {
+    font-size: 1.4vw;
+    color: white;
+  }*/
+
+  /*h2 {
+    font-size: 2vw;
+    color: white;
+  }*/
+
+  #page-wrapper {
+    position: relative;
+  }
+
+  li {
+    list-style: none;
+  }
+
+  a {
+    color: white;
+    text-decoration: none;
+  }
+
+  .container {
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .buttn {
+    padding: 0 20px;
+    height: 40px;
+    font-size: 1em;
+    font-weight: 900;
+    text-transform: uppercase;
+    border: 3px black solid;
+    border-radius: 2px;
+    background: #648c99;
+    cursor: pointer;
   }
 
 
-  /* The navigation bar*/
-
-
-
-  .nav-link {
-    overflow: hidden;
-    background-color: #333 position: fixed;
-    top: 0;
-    width: 100%
+  .grid {
+    display: flex;
   }
 
-  /*Links inside the navbar*/
-  .nav-link>ul {
-    float: right;
+  header {
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    height: 19px;
+    padding: 25px 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #transparent;
+    opacity: 0.7;
+
+    z-index: 5;
+  }
+
+  @media (max-width: 600px) {
+    header {
+      flex-wrap: wrap;
+    }
+  }
+
+  .logo {
+    width: 60vw;
+  }
+
+  @media (max-width: 650px) {
+    .logo {
+      margin-top: 15px;
+      width: 100%;
+      position: relative;
+    }
+  }
+
+  .logo>img {
+    width: 100%;
+    height: 100%;
+    max-width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-left: 20px;
+    margin-top: 80px;
+
+  }
+
+  @media (max-width: 650px) {
+    .logo>img {
+      margin: 0 auto;
+    }
+  }
+
+  @media (max-width: 650px) {
+    nav {
+      margin-top: 10px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 0 50px;
+    }
+
+    nav li {
+      padding-bottom: 5px;
+    }
+  }
+
+  nav>ul {
+    width: 35vw;
     display: flex;
     flex-direction: row;
-    color: #830393 text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
+    justify-content: space-around;
   }
 
-  /*Background over mouse hover*/
-  .nav-link a:hover {
-    background: #ddd;
-    color: black;
+  @media (max-width: 650px) {
+    nav>ul {
+      flex-direction: column;
+    }
   }
 
-  /* Main content*/
-  .main {
-    padding: 16px;
+  /*a:hover {
+      text-decoration: underline;
+      filter: brightness(150%);
+      filter: drop-shadow(8px 8px 10px white);
+    }*/
+
+  #intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 200px;
+    margin-top: 50px;
+  }
+
+  #intro>h2 {
+    margin-bottom: 20px;
+    word-wrap: break-word;
+  }
+
+  #intro input[type='email'] {
+    max-width: 275px;
+    width: 100%;
+    padding: 5px;
+  }
+
+  #intro input[type='submit'] {
+    max-width: 250px;
+    width: 100%;
+    height: 30px;
+    margin: 15px 0;
+    border: 0;
+    background-color: #648c99;
+  }
+
+  #intro input[type='submit']:hover {
+    background-color: lightorange;
+    transition: background-color 1s;
+  }
+
+  @media (max-width: 650px) {
+    #intro {
+      margin-top: 120px;
+    }
+
+    #features {
+      margin-top: 30px;
+    }
+
+    #features .icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 125px;
+      width: 20vw;
+      color: cream;
+    }
+
+    @media (max-width: 550px) {
+      #features .icon {
+        display: none;
+      }
+    }
+
+    #features .desc {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 125px;
+      width: 80vw;
+      padding: 5px;
+    }
+
+    @media (max-width: 550px) {
+      #features .desc {
+        width: 100%;
+        text-align: center;
+        padding: 0;
+        height: 150px;
+      }
+    }
+
+    @media (max-width: 650px) {
+      #features {
+        margin-top: 0;
+      }
+    }
+
+    /*  header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  justify-content: space-between;
+  background-color: #eee;
+  color: white;
+  font-family: 'Exo 2', sans-serif;
+  padding: 25px 0px;
+}*/
+
+
+
+    #how-it-works {
+      /*margin-left: 13%;*/
+      margin-top: 50px;
+      display: flex;
+      justify-content: center;
+      width: 75%;
+    }
+
+    /* centering iframe */
+    /*.embedded-video {
+      position: absolute;
+      margin: auto;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);*/
+
+    #how-it-works>iframe {
+      max-width: 560px;
+      /*width: 100%;*/
+    }
+
+    #buy {
+      /*margin-left: 0;*/
+      margin-top: 60px;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+    }
+
+
+
+    /*#coupon {
     margin-top: 30px;
-    /* Top margin to avoid content overlay*/
+
+  }
+
+  @media (max-width: 650px) {
+  #coupon {
+    margin-top: 0;
+  }*/
+
+
+
+
+
+    /*.submit {  Thanks @yuhomyan for the CSS button effect
+  display: block;
+  width: 100%;
+  height: 3vw;
+  margin-top: 0vw;
+  margin-bottom: 1vw;
+  font-size: 1.5vw;
+*/
+    /*color: white;
+        border-radius: 5px;
+        cursor: pointer;*/
+
+
+    /* .submit:hover {
+          background-color: transparent;
+          color: #00aced;
+          box-shadow: 0 5px 3px -3px #00aced, 0 -5px 3px -3px #00aced,
+            0 5px 3px -3px #00aced, 0 -5px 3px -3px #00aced;*/
+  }
+
+  /*.email {
+          display: block;
+          width: ;
+          height: 2rem;
+          padding: 0.25rem 0.75rem;
+          background-color: #fff;
+          border: 1px solid #ced4da;
+          border-radius: 0.25rem;*/
+  }
+
+  /* ol li {
+          list-style: none;
+        }*/
+
+
+
+
+  .product {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: calc(100% / 3);
+    margin: 10px;
+    border: 10px solid #000;
+    border-radius: 3px;
+  }
+
+  .product>.range {
+    background-color: #20a1a1;
+    color: black;
+    padding: 15px 0;
+    width: 100%;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+
+  .product>h2 {
+    margin-top: 15px;
+  }
+
+  .product>ol {
+    margin: 15px 0;
+  }
+
+  .product>ol>li {
+    padding: 5px 0;
+  }
+
+  .product>button {
+    border: 0;
+    margin: 15px 0;
+    background-color: #648c99;
+    font-weight: 400;
+  }
+
+  .product>button:hover {
+    background-color: orange;
+    transition: background-color 1s;
+  }
+
+  @media (max-width: 800px) {
+    #buy {
+      flex-direction: column;
+    }
+
+    .product {
+      max-width: 300px;
+      width: 100%;
+      margin: 0 auto;
+      margin-bottom: 10px;
+    }
   }
 </style>
 
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
 
-<body>
+<div id="page-wrapper">
+
   <header id="header">
-    <img id="header-img" src="https://cdn.dribbble.com/users/1787323/screenshots/12057610/media/8e7e8e869bf389fb727ac393c42e6b27.png?compress=1&resize=400x300" alt="Xtreme Control logo ">
+    <div class="logo">
+      <img id="header-img" src="https://2img.net/h/i206.photobucket.com/albums/bb311/Sorro_elNublado/BIGXtremeLogo.png" alt="Xtreme Control logo ">
+    </div>
+
     <nav id="nav-bar">
       <ul>
-        <li><a class="nav-link" href="#features">Features</a></li>
-        <li><a class="nav-link" href="#how-it-works">How it Works</a></li>
-        <li><a class="nav-link" href="#pricing">Prici</a></li>
+        <li><a class="nav-link" href="#how-it-works">How it Works</a></li> &nbsp; &nbsp; &nbsp;
+
+        <li><a class="nav-link" href="#features">Features</a></li> &nbsp; &nbsp; &nbsp;
+
+        <li><a class="nav-link" href="#buy">Purchase</a></li> &nbsp; &nbsp;
       </ul>
     </nav>
   </header>
 
-  <section id="how-it-works">
-    <iframe id="video" src="https://www.youtube.com/embed/SebzB8W3bVU" frameborder="0" allowfullscreen>
-    </iframe>
-  </section>
-
-  <section id="features">
-    <h1>Play better. Play faster.</h1>
-    <form action="https://www.freecodecamp.com/email-submit" id="form"><label for="email"></label>
-      <input type="email" name="email" placeholder="Enter youre email address" id="email" required>
-      <input type="submit" value="Get started" id="submit">
-    </form>
-  </section>
+  <body>
 
 
+    <div class="container"></div>
 
-  <section id="pricing">
-    <div class="product" id="Infinity">
-      <div class="range">Infinity</div>
-      <h2>$149.99</h2>
-      <ol>
-        <li>Two remappable paddles</li>
-        <li>Trigger stops and hair triggers</li>
-        <li>Hand Crafted Texturized grip</li>
-      </ol>
-      <button class="buttn">Select</button>
-    </div>
-    <div class="product" id="infinityPro">
-      <div class="range">InfinityPro</div>
-      <h2>$179.99</h2>
-      <ol>
-        <li>Two remappable paddles</li>
-        <li>Trigger Control System</li>
-        <li>Military Grade Grips</li>
-        <li>Digital Tap Bumpers</li>
-      </ol>
-      <button class="buttn">Select</button>
-    </div>
-    <div class="product" id="instinct">
-      <div class="range">Ultra Instinct</div>
-      <h2>$259.99</h2>
-      <ol>
-        <li>Four remappable paddles</li>
-        <li>Trigger control System</li>
-        <li>Digital Tap Bumpers</li>
-        <li>Control Disc</li>
-        <li>Military grade grips</li>
-        <li>Electro-Magneic-Remapping</li>
-      </ol>
-      <button class="buttn">Select</button>
-    </div>
-  </section>
+    <section id="intro">
+      <h2>Play better. Play faster.</h2>
+      <form id="form" action="https://www.freecodecamp.com/email-submit"><label for="email"></label>
+        <input type="email" name="email" placeholder="Enter your email address" id="email" required>
+        <input type="submit" value="Get Discount" class="buttn" id="submit">
+      </form>
+    </section>
 
-</body>
-<script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+    <div class="container">
+      <section id="features">
+        <div class="grid">
+          <div class="icon"><i class="fas fa-fighter-jet fa-3x"></i></div>
+          <div class="desc">
+            <h2>High Perfomance</h2>
+            <p>
+              Built for speed with four newly designed remappable paddles, interchangeable thumbsticks and three on-board profiles.
+            </p>
+          </div>
+        </div>
+        <div class="grid">
+          <div class="icon"><i class="fas fa-gamepad fa-3x"></i></div>
+          <div class="desc">
+            <h2>Premium Materials</h2>
+            <p>
+              Adds a competitive edge with non-slip performance grip and instant triggers that switch from regular to a mouse-like click at the flip of a switch.
+            </p>
+          </div>
+        </div>
+        <div class="grid">
+          <div class="icon">
+            <i class="fas fa-battery-full fa-3x" aria-hidden="true"></i>
+          </div>
+          <div class="desc">
+            <h2>Advanced Ergonomics</h2>
+            <p>
+              Our controllers are designed to increase hand use and reduce unnecessary latency with ergonomics, comfort and safety in mind. Reducing excessive and uncomfortable hand movement with the patented paddle control system and trigger control
+              mechanism.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <div class="embedded-video">
+        <center>
+          <section id="how-it-works">
+            <iframe id="video" height="315" src="https://www.youtube.com/embed/SebzB8W3bVU" frameborder="0" allowfullscreen>
+            </iframe>
+            <p>Next Generation Gaming</p>
+          </section>
+        </center>
+      </div>
+
+
+
+
+
+      <section id="buy">
+        <div class="product" id="Infinity">
+          <div class="range">Infinity</div>
+          <h2>$149.99</h2>
+          <ol>
+            <li>Two remappable paddles</li>
+            <li>Trigger stops and hair triggers</li>
+            <li>Hand Crafted Texturized grip</li>
+          </ol>
+
+          <button class="buttn">Select</button>
+        </div>
+        <div class="product" id="infinityPro">
+          <div class="range">InfinityPro</div>
+          <h2>$179.99</h2>
+          <ol>
+            <li>Trigger Control System</li>
+            <li>Military Grade Grips</li>
+            <li>Digital Tap Bumpers</li>
+          </ol>
+          <button class="buttn">Select</button>
+        </div>
+        <div class="product" id="instinct">
+          <div class="range">Ultra Instinct</div>
+          <h2>$259.99</h2>
+          <ol>
+            <li>Four remappable paddles</li>
+            <li>Control Disc</li>
+            <li>Electro-Magneic-Remapping</li>
+          </ol>
+          <button class="buttn">Select</button>
+        </div>
+      </section>
+
+  </body>
+  <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+
 
 </html>
